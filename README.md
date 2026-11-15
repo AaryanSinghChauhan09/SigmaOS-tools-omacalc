@@ -1,0 +1,1 @@
+# SigmaOS-tools-omacalc\n\nSigmaOS omacalc - Desktop calculator engine\n

@@ -1,0 +1,14 @@
+[package]
+name = "sigmaos-tools-omacalc"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "sigmaos_tools_omacalc"
+path = "src/lib.rs"
+
+[[bin]]
+name = "omacalc"
+path = "src/main.rs"
+
+[dependencies]
