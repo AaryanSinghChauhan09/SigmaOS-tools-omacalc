@@ -3,7 +3,7 @@ name = "SigmaOS-tools-omacalc"
 tier = 2
 stability = "scaffold"
 language = "rust"
-description = "tools-omacalc component"
+description = "SigmaOS Tools omacalc - Desktop calculator engine (omacom/omacalc parity)"
 upstream = []
 
 [contract]
