@@ -1,3 +1,4 @@
+#![forbid(unsafe_code)]
 //! omacalc - Desktop calculator engine for SigmaOS
 
 pub struct Calculator {
@@ -86,5 +87,51 @@ impl Calculator {
 impl Default for Calculator {
     fn default() -> Self {
         Self::new()
+    }
+}
+
+
+#[cfg(test)]
+mod oma_calc_tests {
+    use super::*;
+
+    #[test]
+    fn test_order_of_operations_aaa() {
+        // Arrange
+        let mut calc = Calculator::new();
+        // Act
+        let res = calc.evaluate("2 + 3 * 4").unwrap();
+        // Assert
+        assert_eq!(res, 14.0);
+    }
+
+    #[test]
+    fn test_parentheses_precedence_aaa() {
+        // Arrange
+        let mut calc = Calculator::new();
+        // Act
+        let res = calc.evaluate("(2 + 3) * 4").unwrap();
+        // Assert
+        assert_eq!(res, 20.0);
+    }
+
+    #[test]
+    fn test_floating_point_division_aaa() {
+        // Arrange
+        let mut calc = Calculator::new();
+        // Act
+        let res = calc.evaluate("7 / 2").unwrap();
+        // Assert
+        assert_eq!(res, 3.5);
+    }
+
+    #[test]
+    fn test_invalid_syntax_error_aaa() {
+        // Arrange
+        let mut calc = Calculator::new();
+        // Act
+        let res = calc.evaluate("2 + abc");
+        // Assert
+        assert!(res.is_err());
     }
 }
